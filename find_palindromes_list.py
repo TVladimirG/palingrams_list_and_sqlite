@@ -5,9 +5,6 @@ def find_all_palindromes_list() -> list[str]:
     pali_list: list[str] = []
 
     for i in all_words:
-        # Найти первые ХХХ и остановиться
-        # if len(pali_list) >= 250:
-        #     return pali_list
 
         word: str = i
         len_word: int = len(word)
@@ -26,7 +23,6 @@ def find_all_palindromes_list() -> list[str]:
                     search_word: str = l_side[::-1]
                     if search_word in all_words:
                         pali_list.append(search_word)
-                        # print(f'{word} {search_word}')
 
                  # Отнимаем буквы с начала слова
                 l_side: str = word[:i:]
@@ -40,7 +36,6 @@ def find_all_palindromes_list() -> list[str]:
                     search_word: str = r_side[::-1]
                     if search_word in all_words:
                         pali_list.append(search_word)
-                        # print(f'{search_word} {word}')
 
     return pali_list
 
@@ -53,7 +48,4 @@ def get_all_words() -> set[str]:
         words = [line.strip().lower()
                  for line in file if len(line) > 2]
 
-        #  Далее пробежимся по нему, и добавим каждое слово в таблицу
-    # for word in words:
-    #     __l.append(word)
     return set(words)
