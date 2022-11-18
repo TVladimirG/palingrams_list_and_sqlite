@@ -1,20 +1,13 @@
 
 def find_all_palindromes_list() -> list[str]:
 
-    all_words: list[str] = get_all_words()
+    all_words: set[str] = get_all_words()
     pali_list: list[str] = []
-
-    itr: int = 0
 
     for i in all_words:
         # Найти первые ХХХ и остановиться
         # if len(pali_list) >= 250:
         #     return pali_list
-
-        # выводить каждые 1000 элементов
-        itr += 1
-        if itr % 1000 == 0:
-            print(iter)
 
         word: str = i
         len_word: int = len(word)
@@ -52,7 +45,7 @@ def find_all_palindromes_list() -> list[str]:
     return pali_list
 
 
-def get_all_words() -> list[str]:
+def get_all_words() -> set[str]:
     words: list[str] = []
     with open(
         'web2.txt',
@@ -63,4 +56,4 @@ def get_all_words() -> list[str]:
         #  Далее пробежимся по нему, и добавим каждое слово в таблицу
     # for word in words:
     #     __l.append(word)
-    return words
+    return set(words)

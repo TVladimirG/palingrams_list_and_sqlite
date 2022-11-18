@@ -1,4 +1,4 @@
-import datetime
+import time
 
 # from find_palindromes_sqlite import find_all_palindromes_sqlite
 from find_palindromes_list import find_all_palindromes_list
@@ -15,16 +15,21 @@ def main() -> None:
     # print(f'Конец поиска {datetime.datetime.now()}')
 
     # ********************************************************
-    # Разница в скорости поиска между sqlite и list - ожидаемо 
+    # Разница в скорости поиска между sqlite и list - ожидаемо
     #   в несколько раз (разумеется в пользу list)
+    # А если вместо list использовать set то еще в несколько тысяч раз быстрее
+    # в итоге программа работает всего ~0.902 сек
+
 
     print('Ищем палиндромы с помощью обычного списка')
 
-    print(f'Начало поиска {datetime.datetime.now()}')
+    start = time.time()
     pali_list: list[str] = find_all_palindromes_list()
+    end = time.time()
 
     print(f'Всего палиндромов {len(pali_list)}')
-    print(f'Конец поиска {datetime.datetime.now()}')
+    delta = end-start
+    print(f'Время поиска {delta:.3f} сек')
 
 
 main()
