@@ -6,7 +6,7 @@ def find_all_palindromes_sqlite() -> list[str]:
     data_base: DataBase = DataBase()
     data_base.initial_db()
 
-    all_words: list[str] = data_base.all_words()
+    all_words: set[str] = data_base.all_words()
     pali_list: list[str] = []
 
     for i in all_words:
