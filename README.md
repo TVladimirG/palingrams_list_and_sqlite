@@ -4,7 +4,7 @@
 
 ## Description
 
-Задача из книги "Непрактичный Python" Ли Вогвн (IMPRACTICAL PYTHON PROJECTS)
+Задача из книги "Непрактичный Python" Ли Воган (IMPRACTICAL PYTHON PROJECTS)
 
 Реализовано 2 варианта поиска
 1) Данные из словаря читаются и записываются в базу sqlite
